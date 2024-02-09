@@ -19,12 +19,13 @@ struct ControlView: View {
             HStack{
                 Text("Control Center").font(.system(size: 50)).fontWeight(.black).padding()
                 Spacer()
+                Image(systemName: "pencil.and.scribble").resizable().scaledToFit().frame(width: 80, height: 80).padding()
             }
             Spacer()
             HStack{
                 ForEach(0..<4) {index in
                     Button(action: {
-                        Selectiontable = index
+                        Selectiontable = index + 1
                         Showshould_SelectionTableDetailView = true
                     }){
                         VStack{
