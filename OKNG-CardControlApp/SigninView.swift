@@ -79,7 +79,8 @@ struct SigninView: View {
         let data: [String: Any] = [
             "Username": NewUsername,
             "UserStatus": "",
-            "CardStatus": false
+            "CardStatus": false,
+            "SeatedSeats": "None"
         ]
         
         collectionReference.document(NewGmail).setData(data) { error in

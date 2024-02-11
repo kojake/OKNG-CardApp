@@ -15,7 +15,7 @@ struct UserStatusSelectView: View {
     
     var body: some View {
         VStack{
-            NavigationLink(destination: ContentView(), isActive: $Showshould_ContentView){
+            NavigationLink(destination: ContentView(Gmail: $Gmail), isActive: $Showshould_ContentView){
                 EmptyView()
             }
             

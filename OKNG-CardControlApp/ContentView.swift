@@ -9,9 +9,7 @@ import SwiftUI
 import FirebaseFirestore
 
 struct ContentView: View {
-    //@Binding var Gmail: String
-    @State var Gmail: String = "ahonamame@gmail.com"
-    @State var Username: String = ""
+    @Binding var Gmail: String
     @State var UserStatus: String = ""
     @State var CardStatus: Bool = false
     
@@ -30,14 +28,6 @@ struct ContentView: View {
     private func UserDataGet(){
         let db = Firestore.firestore()
         
-        //Username
-        db.collection("UserList").document(Gmail).getDocument { (document, error) in
-            if let document = document, document.exists {
-                if let username = document.data()?["Username"] as? String {
-                    Username = username
-                }
-            }
-        }
         //UserStatus
         db.collection("UserList").document(Gmail).getDocument { (document, error) in
             if let document = document, document.exists {
@@ -55,8 +45,4 @@ struct ContentView: View {
             }
         }
     }
-}
-
-#Preview {
-    ContentView()
 }

@@ -36,7 +36,7 @@ struct SelectionTableDetailView: View {
                             Image(systemName: "person.fill").resizable().scaledToFit().frame(width: 70, height: 70).foregroundColor(.white).padding()
                             Text(SelectTableSeatPeopleList[index]).font(.title2).fontWeight(.black)
                             Spacer()
-                            if SelectTableCardStatusList[index]{
+                            if SelectTableCardStatusList[index] && !SelectTableCardStatusList.isEmpty{
                                 Text("OK").font(.largeTitle).fontWeight(.black).frame(width: 150, height: 100).background(Color.green).cornerRadius(10)
                             } else {
                                 Text("NG").font(.largeTitle).fontWeight(.black).frame(width: 150, height: 100).background(Color.red).cornerRadius(10)
@@ -47,11 +47,18 @@ struct SelectionTableDetailView: View {
                 }
             }
             Spacer()
-            Button(action: {
-                dismiss()
-            }){
-                Image(systemName: "xmark").frame(width: 80, height: 80).background(Color.black).foregroundColor(Color.white).cornerRadius(50)
-            }.padding()
+            HStack{
+                Button(action: {
+                    dismiss()
+                }){
+                    Image(systemName: "xmark").frame(width: 80, height: 80).background(Color.black).foregroundColor(Color.white).cornerRadius(50)
+                }.padding()
+                Button(action: {
+                   PeopleSeatedAtSelectTables()
+                }){
+                    Text("再読み込み").font(.title).frame(width: 180, height: 80).background(Color.black).foregroundColor(Color.white).cornerRadius(20)
+                }
+            }
         }
         .navigationBarBackButtonHidden(true)
         .onAppear{

@@ -23,7 +23,7 @@ struct LoginView: View {
     
     var body: some View {
         NavigationStack{
-            NavigationLink(destination: ContentView(), isActive: $Showshould_ContentView){
+            NavigationLink(destination: ContentView(Gmail: $Gmail), isActive: $Showshould_ContentView){
                 EmptyView()
             }
             NavigationLink(destination: SigninView(), isActive: $Showshould_SigninView){
