@@ -45,6 +45,7 @@
 		973C179D2B74FB5D001E0A35 /* UserStatusSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973C179C2B74FB5D001E0A35 /* UserStatusSelectView.swift */; };
 		973C17A12B750432001E0A35 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973C17A02B750432001E0A35 /* ControlView.swift */; };
 		973C17A32B75046E001E0A35 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973C17A22B75046E001E0A35 /* StatusView.swift */; };
+		973C17A82B7E49A9001E0A35 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973C17A72B7E49A9001E0A35 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		973C179C2B74FB5D001E0A35 /* UserStatusSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatusSelectView.swift; sourceTree = "<group>"; };
 		973C17A02B750432001E0A35 /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
 		973C17A22B75046E001E0A35 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		973C17A72B7E49A9001E0A35 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				973C17982B735B88001E0A35 /* SigninView.swift */,
 				973C179C2B74FB5D001E0A35 /* UserStatusSelectView.swift */,
 				973C17512B73097F001E0A35 /* ContentView.swift */,
+				973C17A72B7E49A9001E0A35 /* ProfileView.swift */,
 				973C179F2B75041C001E0A35 /* Student */,
 				973C179E2B75040C001E0A35 /* Teacher */,
 			);
@@ -270,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				973C17A32B75046E001E0A35 /* StatusView.swift in Sources */,
+				973C17A82B7E49A9001E0A35 /* ProfileView.swift in Sources */,
 				973C17972B735937001E0A35 /* LoginView.swift in Sources */,
 				973C179B2B736A72001E0A35 /* SelectionTableDetailView.swift in Sources */,
 				973C17522B73097F001E0A35 /* ContentView.swift in Sources */,
