@@ -34,7 +34,7 @@ struct SigninView: View {
                 Spacer()
                 TextField("Tap To NewUsername", text: $NewUsername).frame(width: 250, height: 60).background(Color.white).foregroundColor(Color.black)
                 TextField("Tap To NewGmail", text: $NewGmail).frame(width: 250, height: 60).background(Color.white).foregroundColor(Color.black).keyboardType(.emailAddress)
-                TextField("Tap To NewPassword", text: $NewPassword).frame(width: 250, height: 60).background(Color.white).foregroundColor(Color.black)
+                SecureField("Tap To NewPassword", text: $NewPassword).frame(width: 250, height: 60).background(Color.white).foregroundColor(Color.black)
                 Spacer()
                 Button(action: {
                     signUp()

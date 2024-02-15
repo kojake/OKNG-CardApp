@@ -35,7 +35,7 @@ struct LoginView: View {
                     Text("Login").font(.largeTitle).fontWeight(.black)
                     Spacer()
                     TextField("Tap To Gmail", text: $Gmail).frame(width: 250, height: 60).background(Color.white).foregroundColor(Color.black).keyboardType(.emailAddress)
-                    TextField("Tap To Password", text: $Password).frame(width: 250, height: 60).background(Color.white).foregroundColor(Color.black)
+                    SecureField("Tap To Password", text: $Password).frame(width: 250, height: 60).background(Color.white).foregroundColor(Color.black)
                     Spacer()
                     Button(action: {
                         login()

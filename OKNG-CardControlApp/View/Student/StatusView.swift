@@ -52,8 +52,11 @@ struct StatusView: View {
                             SelectTableCardStatusList.remove(at: ElementNumber)
                         }
                         TableUpdate(TableNumber: Previoustable)
-                        SelectTableSeatPeopleList.append(Username)
-                        SelectTableCardStatusList.append(false)
+                        if SelectionTableValue != 0{
+                            PeopleSeatedAtSelectTables()
+                            SelectTableSeatPeopleList.append(Username)
+                            SelectTableCardStatusList.append(CardStatus)
+                        }
                         TableUpdate(TableNumber: SelectionTableValue)
                         Previoustable = SelectionTableValue
                     }){
@@ -102,7 +105,7 @@ struct StatusView: View {
             }
         }
     }
-    //CardStatus
+    //CardStatusChange
     private func CardStatusChange(){
         let db = Firestore.firestore()
         let MyElementNumber = MySeateddSeatsElementNumber(of: Username, in: SelectTableSeatPeopleList)
@@ -166,19 +169,17 @@ struct StatusView: View {
         db.collection("UserList").document(Gmail).getDocument { (document, error) in
             if let document = document, document.exists {
                 if let seatedseats = document.data()?["SeatedSeats"] as? String {
-                    if seatedseats != "None"{
-                        db.collection("TableList").document(seatedseats).getDocument { (document, error) in
-                            if let document = document, document.exists {
-                                if let people = document.data()?["People"] as? [String] {
-                                    SelectTableSeatPeopleList = people
-                                }
+                    db.collection("TableList").document(seatedseats).getDocument { (document, error) in
+                        if let document = document, document.exists {
+                            if let people = document.data()?["People"] as? [String] {
+                                SelectTableSeatPeopleList = people
                             }
                         }
-                        db.collection("TableList").document(seatedseats).getDocument { (document, error) in
-                            if let document = document, document.exists {
-                                if let status = document.data()?["CardStatus"] as? [Bool] {
-                                    SelectTableCardStatusList = status
-                                }
+                    }
+                    db.collection("TableList").document(seatedseats).getDocument { (document, error) in
+                        if let document = document, document.exists {
+                            if let status = document.data()?["CardStatus"] as? [Bool] {
+                                SelectTableCardStatusList = status
                             }
                         }
                     }

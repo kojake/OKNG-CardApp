@@ -120,12 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				973C174F2B73097F001E0A35 /* OKNG_CardControlAppApp.swift */,
-				973C17962B735937001E0A35 /* LoginView.swift */,
-				973C17982B735B88001E0A35 /* SigninView.swift */,
-				973C179C2B74FB5D001E0A35 /* UserStatusSelectView.swift */,
-				973C17512B73097F001E0A35 /* ContentView.swift */,
-				973C179F2B75041C001E0A35 /* Student */,
-				973C179E2B75040C001E0A35 /* Teacher */,
+				973C17A62B79956C001E0A35 /* View */,
 				973C17942B735896001E0A35 /* GoogleService-Info.plist */,
 				973C17532B730984001E0A35 /* Assets.xcassets */,
 				973C17552B730984001E0A35 /* Preview Content */,
@@ -156,6 +151,19 @@
 				973C17A22B75046E001E0A35 /* StatusView.swift */,
 			);
 			path = Student;
+			sourceTree = "<group>";
+		};
+		973C17A62B79956C001E0A35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				973C17962B735937001E0A35 /* LoginView.swift */,
+				973C17982B735B88001E0A35 /* SigninView.swift */,
+				973C179C2B74FB5D001E0A35 /* UserStatusSelectView.swift */,
+				973C17512B73097F001E0A35 /* ContentView.swift */,
+				973C179F2B75041C001E0A35 /* Student */,
+				973C179E2B75040C001E0A35 /* Teacher */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
