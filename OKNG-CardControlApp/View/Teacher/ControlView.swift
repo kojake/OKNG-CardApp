@@ -49,22 +49,6 @@ struct ControlView: View {
                 }
             }
             Spacer()
-            HStack{
-                Button(action: {
-                    
-                }){
-                    VStack{
-                        Image(systemName: "person.fill").resizable().scaledToFit().frame(width: 50, height: 50).foregroundColor(Color.white)
-                    }.frame(width: 80, height: 80).background(Color.black).cornerRadius(10)
-                }.padding()
-                Button(action: {
-                    
-                }){
-                    VStack{
-                        Image(systemName: "message").resizable().scaledToFit().frame(width: 50, height: 50).foregroundColor(Color.white)
-                    }.frame(width: 80, height: 80).background(Color.black).cornerRadius(10)
-                }
-            }.padding()
         }
         .navigationBarBackButtonHidden(true)
     }

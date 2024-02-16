@@ -13,12 +13,36 @@ struct ContentView: View {
     @State var UserStatus: String = ""
     @State var CardStatus: Bool = false
     
+    @State private var Showshould_ProfileView = false
+    
     var body: some View {
-        VStack{
+        ZStack{
+            NavigationLink(destination: ProfileView(), isActive: $Showshould_ProfileView){
+                EmptyView()
+            }
             if UserStatus == "Student"{
                 StatusView(Gmail: $Gmail, CardStatus: $CardStatus)
             } else {
                 ControlView()
+            }
+            VStack{
+                Spacer()
+                HStack{
+                    Button(action: {
+                        Showshould_ProfileView = true
+                    }){
+                        VStack{
+                            Image(systemName: "person.fill").resizable().scaledToFit().frame(width: 50, height: 50).foregroundColor(Color.white)
+                        }.frame(width: 80, height: 80).background(Color.black).cornerRadius(10)
+                    }.padding()
+                    Button(action: {
+                        
+                    }){
+                        VStack{
+                            Image(systemName: "message").resizable().scaledToFit().frame(width: 50, height: 50).foregroundColor(Color.white)
+                        }.frame(width: 80, height: 80).background(Color.black).cornerRadius(10)
+                    }
+                }.padding()
             }
         }
         .onAppear{

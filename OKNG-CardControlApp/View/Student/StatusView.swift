@@ -21,14 +21,9 @@ struct StatusView: View {
     @State private var SelectTableSeatPeopleList: [String] = []
     @State private var SelectTableCardStatusList: [Bool] = []
     
-    @State private var Showshould_ProfileView = false
-    
 
     var body: some View {
         VStack{
-            NavigationLink(destination: ProfileView(), isActive: $Showshould_ProfileView){
-                EmptyView()
-            }
             HStack{
                 Text("Change Status").font(.largeTitle).fontWeight(.black).padding()
                 Spacer()
@@ -91,11 +86,6 @@ struct StatusView: View {
                 }
             }
             Spacer()
-            Button(action: {
-                
-            }){
-                Image(systemName: "person.fill").frame(width: 60, height: 60).background(Color.black).foregroundColor(Color.white).cornerRadius(10)
-            }.padding()
         }.navigationBarBackButtonHidden(true)
         .onAppear{
             SeatedSeatsGet()
