@@ -58,6 +58,10 @@ struct LoginView: View {
                 }
             }
         }
+        //ErrorAlert
+        .alert(isPresented: $Erroralert) {
+            Alert(title: Text(Errormessage))
+        }
     }
     
     private func login() {

@@ -57,6 +57,10 @@ struct SigninView: View {
                 }
             }
         }
+        //ErrorAlert
+        .alert(isPresented: $Erroralert) {
+            Alert(title: Text(Errormessage))
+        }
     }
     private func signUp() {
         Auth.auth().createUser(withEmail: NewGmail, password: NewPassword) { (result, error) in

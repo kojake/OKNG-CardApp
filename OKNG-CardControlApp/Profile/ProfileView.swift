@@ -6,9 +6,15 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 struct ProfileView: View {
     @Environment(\.dismiss) var dismiss
+    
+    @State var Username: String = ""
+    @Binding var Gmail: String
+    
+    @State private var Showshould_SetteingView = false
     
     var body: some View {
         VStack{
@@ -29,12 +35,12 @@ struct ProfileView: View {
                 VStack{
                     Image(systemName: "person").resizable().scaledToFit().frame(width: 80, height: 80).foregroundColor(Color.white)
                 }.frame(width: 100, height: 100).background(Color.white.opacity(0.5)).cornerRadius(10).padding()
-                Text("Username").font(.title).fontWeight(.bold).foregroundStyle(Color.white)
+                Text(Username).font(.title).fontWeight(.bold).foregroundStyle(Color.white)
                 Spacer()
                 HStack{
                     Spacer()
                     Button(action: {
-                        
+                        Showshould_SetteingView = true
                     }){
                         HStack{
                             Image(systemName: "gearshape.fill").resizable().scaledToFit().frame(width: 40, height: 40).foregroundColor(Color.white)
@@ -43,10 +49,25 @@ struct ProfileView: View {
                 }
             }.frame(width: 300, height: 450).background(Color.blue).cornerRadius(10).padding()
             Spacer()
-        }.navigationBarBackButtonHidden(true)
+        }
+        .onAppear{
+            UsernameGet()
+        }
+        .navigationBarBackButtonHidden(true)
+        .sheet(isPresented: $Showshould_SetteingView){
+            SettingView(Gmail: $Gmail)
+        }
     }
-}
-
-#Preview {
-    ProfileView()
+    private func UsernameGet(){
+        let db = Firestore.firestore()
+        
+        //UserStatus
+        db.collection("UserList").document(Gmail).getDocument { (document, error) in
+            if let document = document, document.exists {
+                if let username = document.data()?["Username"] as? String {
+                    Username = username
+                }
+            }
+        }
+    }
 }

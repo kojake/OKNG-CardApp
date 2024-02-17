@@ -17,7 +17,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack{
-            NavigationLink(destination: ProfileView(), isActive: $Showshould_ProfileView){
+            NavigationLink(destination: ProfileView(Gmail: $Gmail), isActive: $Showshould_ProfileView){
                 EmptyView()
             }
             if UserStatus == "Student"{
