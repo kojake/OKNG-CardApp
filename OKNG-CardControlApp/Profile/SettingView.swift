@@ -7,15 +7,17 @@
 
 import SwiftUI
 import FirebaseFirestore
+import FirebaseAuth
 
 struct SettingView: View {
     @Environment(\.dismiss) var dismiss
     
     @Binding var Gmail: String
-    @State var Username: String = ""
+    @Binding var Username: String
     @State var CurrentUsername: String = ""
-    @State var Password: String = ""
-    @State var CurrentPassword: String = ""
+    
+    @State private var Passwordalert = false
+    @State var alertmessage = ""
     
     var body: some View {
         VStack{
@@ -31,12 +33,16 @@ struct SettingView: View {
             }
             Spacer()
             VStack{
-                Text("Username").font(.title).fontWeight(.bold)
+                Text("-Username").font(.title).fontWeight(.bold)
                 TextField("Tap to Enter", text: $Username).frame(width: 250, height: 50).background(Color.gray.opacity(0.2)).cornerRadius(8)
-            }
+            }.padding()
             VStack{
-                Text("Password").font(.title).fontWeight(.bold)
-                TextField("Tap to Enter", text: $Password).frame(width: 250, height: 50).background(Color.gray.opacity(0.2)).cornerRadius(8)
+                Text("-Password").font(.title).fontWeight(.bold)
+                Button(action: {
+                    PasswordReset()
+                }){
+                    Text("パスワードリセット").font(.title3).fontWeight(.bold).frame(width: 230, height: 60).background(Color.blue).foregroundColor(Color.white).cornerRadius(8)
+                }
             }
             Spacer()
             HStack{
@@ -46,15 +52,23 @@ struct SettingView: View {
                         CurrentUsername = Username
                     }
                 }){
-                    Text("変更する").font(.title).fontWeight(.black).frame(width: 150, height: 60).background(Username != CurrentUsername || Password != CurrentPassword ? Color.green : Color.gray).foregroundColor(Color.white).cornerRadius(10)
-                }
+                    Text("変更する").font(.title).fontWeight(.black).frame(width: 150, height: 60).background(Username != CurrentUsername ? Color.green : Color.gray).foregroundColor(Color.white).cornerRadius(10)
+                }.disabled(Username != CurrentUsername)
                 Button(action: {
                     
                 }){
                     Text("アカウント削除").font(.title).fontWeight(.black).frame(width: 200, height: 60).background(Color.red).foregroundColor(Color.white).cornerRadius(10)
                 }
             }.padding()
-        }.navigationBarBackButtonHidden(true)
+        }
+        //ErrorAlert
+        .alert(isPresented: $Passwordalert) {
+            Alert(title: Text(alertmessage))
+        }
+        .navigationBarBackButtonHidden(true)
+        .onAppear{
+            CurrentUsername = Username
+        }
     }
     private func UsernameUpdate(){
         let db = Firestore.firestore()
@@ -62,6 +76,17 @@ struct SettingView: View {
         db.collection("UserList").document(Gmail).setData(["Username": Username], merge: true) { error in
             if let error = error {
                 print("Error updating document: \(error)")
+            }
+        }
+    }
+    private func PasswordReset(){
+        Auth.auth().sendPasswordReset(withEmail: Gmail) { error in
+            if let error = error {
+                alertmessage = error.localizedDescription
+                Passwordalert = true
+            } else {
+                alertmessage = "パスワードリセットリンクをメールに送信しました\nリンクからパスワードをリセットしてください。"
+                Passwordalert = true
             }
         }
     }

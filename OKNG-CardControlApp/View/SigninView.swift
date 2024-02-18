@@ -82,6 +82,7 @@ struct SigninView: View {
         // ドキュメントを追加
         let data: [String: Any] = [
             "Username": NewUsername,
+            "Password": NewPassword,
             "UserStatus": "",
             "CardStatus": false,
             "SeatedSeats": "None"

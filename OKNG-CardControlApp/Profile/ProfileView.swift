@@ -55,13 +55,12 @@ struct ProfileView: View {
         }
         .navigationBarBackButtonHidden(true)
         .sheet(isPresented: $Showshould_SetteingView){
-            SettingView(Gmail: $Gmail)
+            SettingView(Gmail: $Gmail, Username: $Username)
         }
     }
     private func UsernameGet(){
         let db = Firestore.firestore()
-        
-        //UserStatus
+
         db.collection("UserList").document(Gmail).getDocument { (document, error) in
             if let document = document, document.exists {
                 if let username = document.data()?["Username"] as? String {

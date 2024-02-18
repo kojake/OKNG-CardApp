@@ -14,10 +14,14 @@ struct ContentView: View {
     @State var CardStatus: Bool = false
     
     @State private var Showshould_ProfileView = false
+    @State private var Showshould_SelectTalkView = false
     
     var body: some View {
         ZStack{
             NavigationLink(destination: ProfileView(Gmail: $Gmail), isActive: $Showshould_ProfileView){
+                EmptyView()
+            }
+            NavigationLink(destination: SelectTalkView(), isActive: $Showshould_SelectTalkView){
                 EmptyView()
             }
             if UserStatus == "Student"{
@@ -36,7 +40,7 @@ struct ContentView: View {
                         }.frame(width: 80, height: 80).background(Color.black).cornerRadius(10)
                     }.padding()
                     Button(action: {
-                        
+                        Showshould_SelectTalkView = true
                     }){
                         VStack{
                             Image(systemName: "message").resizable().scaledToFit().frame(width: 50, height: 50).foregroundColor(Color.white)
