@@ -10,6 +10,8 @@ import FirebaseFirestore
 import FirebaseAuth
 
 struct SigninView: View {
+    @Environment(\.dismiss) var dismiss
+    
     //Login
     @State var NewGmail: String = ""
     @State var NewPassword: String = ""
@@ -20,7 +22,6 @@ struct SigninView: View {
     @State private var Erroralert = false
     
     //
-    @Environment(\.dismiss) var dismiss
     @State private var Showshould_UserStatusSelectView = false
     
     var body: some View {

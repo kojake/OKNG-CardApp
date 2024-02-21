@@ -50,6 +50,8 @@
 		9747A5192B821D2B00A7EBEA /* SelectTalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747A5182B821D2B00A7EBEA /* SelectTalkView.swift */; };
 		9747A51B2B821FDF00A7EBEA /* TalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747A51A2B821FDF00A7EBEA /* TalkView.swift */; };
 		9747A5202B82D4F300A7EBEA /* TalkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747A51F2B82D4F300A7EBEA /* TalkModel.swift */; };
+		9747A5222B85EC3B00A7EBEA /* TapMessageEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747A5212B85EC3B00A7EBEA /* TapMessageEditView.swift */; };
+		9747A5242B861D6D00A7EBEA /* Progressview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747A5232B861D6D00A7EBEA /* Progressview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		9747A5182B821D2B00A7EBEA /* SelectTalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTalkView.swift; sourceTree = "<group>"; };
 		9747A51A2B821FDF00A7EBEA /* TalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkView.swift; sourceTree = "<group>"; };
 		9747A51F2B82D4F300A7EBEA /* TalkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkModel.swift; sourceTree = "<group>"; };
+		9747A5212B85EC3B00A7EBEA /* TapMessageEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapMessageEditView.swift; sourceTree = "<group>"; };
+		9747A5232B861D6D00A7EBEA /* Progressview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progressview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,7 @@
 				973C17982B735B88001E0A35 /* SigninView.swift */,
 				973C179C2B74FB5D001E0A35 /* UserStatusSelectView.swift */,
 				973C17512B73097F001E0A35 /* ContentView.swift */,
+				9747A5232B861D6D00A7EBEA /* Progressview.swift */,
 				9747A5112B7EE36900A7EBEA /* Profile */,
 				9747A5172B821D1100A7EBEA /* Talk */,
 				973C179F2B75041C001E0A35 /* Student */,
@@ -194,6 +199,7 @@
 			children = (
 				9747A5182B821D2B00A7EBEA /* SelectTalkView.swift */,
 				9747A51A2B821FDF00A7EBEA /* TalkView.swift */,
+				9747A5212B85EC3B00A7EBEA /* TapMessageEditView.swift */,
 			);
 			path = Talk;
 			sourceTree = "<group>";
@@ -311,12 +317,14 @@
 			files = (
 				973C17A32B75046E001E0A35 /* StatusView.swift in Sources */,
 				9747A5132B7EE38000A7EBEA /* SettingView.swift in Sources */,
+				9747A5242B861D6D00A7EBEA /* Progressview.swift in Sources */,
 				973C17A82B7E49A9001E0A35 /* ProfileView.swift in Sources */,
 				973C17972B735937001E0A35 /* LoginView.swift in Sources */,
 				973C179B2B736A72001E0A35 /* SelectionTableDetailView.swift in Sources */,
 				973C17522B73097F001E0A35 /* ContentView.swift in Sources */,
 				9747A5192B821D2B00A7EBEA /* SelectTalkView.swift in Sources */,
 				9747A5202B82D4F300A7EBEA /* TalkModel.swift in Sources */,
+				9747A5222B85EC3B00A7EBEA /* TapMessageEditView.swift in Sources */,
 				973C179D2B74FB5D001E0A35 /* UserStatusSelectView.swift in Sources */,
 				9747A51B2B821FDF00A7EBEA /* TalkView.swift in Sources */,
 				973C17992B735B88001E0A35 /* SigninView.swift in Sources */,

@@ -13,6 +13,8 @@ struct ContentView: View {
     @State var UserStatus: String = ""
     @State var CardStatus: Bool = false
     
+    @State private var Progress = false
+    
     @State private var Showshould_ProfileView = false
     @State private var Showshould_SelectTalkView = false
     
@@ -26,8 +28,10 @@ struct ContentView: View {
             }
             if UserStatus == "Student"{
                 StatusView(Gmail: $Gmail, CardStatus: $CardStatus)
-            } else {
+            } else if UserStatus == "Teacher" {
                 ControlView()
+            } else {
+                Progressview()
             }
             VStack{
                 Spacer()

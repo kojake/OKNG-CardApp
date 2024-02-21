@@ -17,6 +17,10 @@ struct TalkView: View {
         TalkModel(name: "You", message: "b"),
         TalkModel(name: "Your", message: "c")
     ]
+    @State var TapMessage = ""
+    @State var TapMessageIndex = 0
+    
+    @State private var Showshould_TapMessageEditView = false
     
     var body: some View {
         VStack{
@@ -26,34 +30,42 @@ struct TalkView: View {
             }
             Spacer()
             ScrollView{
-                ForEach(TalkHistory, id: \.id) { talkmodel in
+                ForEach(TalkHistory.indices, id: \.self) { index in
+                    let talkmodel = TalkHistory[index]
                     HStack{
-                        if talkmodel.name != "You"{
+                        if talkmodel.name == "You"{
                             Spacer()
                         }
                         VStack(alignment: .leading){
                             VStack{
                                 HStack{
-                                    if talkmodel.name != "You"{
+                                    if talkmodel.name == "You"{
                                         Spacer()
                                     }
                                     Text(talkmodel.name).font(.title2).fontWeight(.bold)
-                                    if talkmodel.name == "You"{
+                                    if talkmodel.name != "You"{
                                         Spacer()
                                     }
                                 }
                                 HStack{
-                                    if talkmodel.name != "You"{
+                                    if talkmodel.name == "You"{
                                         Spacer()
                                     }
                                     Text(talkmodel.message).font(.title3).fontWeight(.bold)
-                                    if talkmodel.name == "You"{
+                                    if talkmodel.name != "You"{
                                         Spacer()
                                     }
                                 }
                             }.padding()
                         }.frame(width: 400, height: 60).background(talkmodel.name == "You" ? Color.green : Color.red).foregroundColor(Color.white).cornerRadius(6).padding()
-                        if talkmodel.name == "You"{
+                            .onLongPressGesture(perform: {
+                                if talkmodel.name == "You"{
+                                    TapMessage = talkmodel.message
+                                    TapMessageIndex = index
+                                    Showshould_TapMessageEditView = true
+                                }
+                            })
+                        if talkmodel.name != "You"{
                             Spacer()
                         }
                     }
@@ -76,6 +88,9 @@ struct TalkView: View {
                     }.padding()
                 }
             }
+        }
+        .sheet(isPresented: $Showshould_TapMessageEditView){
+            TapMessageEditView(TapMessage: $TapMessage, TapMessageIndex: $TapMessageIndex, TalkHistory: $TalkHistory)
         }
         .toolbar {
             ToolbarItem(placement: .keyboard) {
