@@ -49,6 +49,7 @@
 		9747A5132B7EE38000A7EBEA /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747A5122B7EE38000A7EBEA /* SettingView.swift */; };
 		9747A5192B821D2B00A7EBEA /* SelectTalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747A5182B821D2B00A7EBEA /* SelectTalkView.swift */; };
 		9747A51B2B821FDF00A7EBEA /* TalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747A51A2B821FDF00A7EBEA /* TalkView.swift */; };
+		9747A5202B82D4F300A7EBEA /* TalkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747A51F2B82D4F300A7EBEA /* TalkModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		9747A5122B7EE38000A7EBEA /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		9747A5182B821D2B00A7EBEA /* SelectTalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTalkView.swift; sourceTree = "<group>"; };
 		9747A51A2B821FDF00A7EBEA /* TalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkView.swift; sourceTree = "<group>"; };
+		9747A51F2B82D4F300A7EBEA /* TalkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				973C174F2B73097F001E0A35 /* OKNG_CardControlAppApp.swift */,
-				9747A5162B821CD400A7EBEA /* Model */,
+				9747A51E2B82D4EA00A7EBEA /* Model */,
 				973C17A62B79956C001E0A35 /* View */,
 				973C17942B735896001E0A35 /* GoogleService-Info.plist */,
 				973C17532B730984001E0A35 /* Assets.xcassets */,
@@ -187,13 +189,6 @@
 			path = "OKNG-CardControlApp/Profile";
 			sourceTree = SOURCE_ROOT;
 		};
-		9747A5162B821CD400A7EBEA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		9747A5172B821D1100A7EBEA /* Talk */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +196,14 @@
 				9747A51A2B821FDF00A7EBEA /* TalkView.swift */,
 			);
 			path = Talk;
+			sourceTree = "<group>";
+		};
+		9747A51E2B82D4EA00A7EBEA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9747A51F2B82D4F300A7EBEA /* TalkModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +316,7 @@
 				973C179B2B736A72001E0A35 /* SelectionTableDetailView.swift in Sources */,
 				973C17522B73097F001E0A35 /* ContentView.swift in Sources */,
 				9747A5192B821D2B00A7EBEA /* SelectTalkView.swift in Sources */,
+				9747A5202B82D4F300A7EBEA /* TalkModel.swift in Sources */,
 				973C179D2B74FB5D001E0A35 /* UserStatusSelectView.swift in Sources */,
 				9747A51B2B821FDF00A7EBEA /* TalkView.swift in Sources */,
 				973C17992B735B88001E0A35 /* SigninView.swift in Sources */,

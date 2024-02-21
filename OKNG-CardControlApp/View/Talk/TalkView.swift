@@ -6,18 +6,58 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 struct TalkView: View {
     @State var SelectedTalk: String = "a"
-    @State var TalkHistory: [String:String] = [:]
-    
     @State var SendMessage: String = ""
+    
+    @State private var TalkHistory: [TalkModel] = [
+        TalkModel(name: "You", message: "a"),
+        TalkModel(name: "You", message: "b"),
+        TalkModel(name: "Your", message: "c")
+    ]
     
     var body: some View {
         VStack{
             HStack{
                 Text(SelectedTalk).font(.system(size: 45)).fontWeight(.black).padding()
                 Spacer()
+            }
+            Spacer()
+            ScrollView{
+                ForEach(TalkHistory, id: \.id) { talkmodel in
+                    HStack{
+                        if talkmodel.name != "You"{
+                            Spacer()
+                        }
+                        VStack(alignment: .leading){
+                            VStack{
+                                HStack{
+                                    if talkmodel.name != "You"{
+                                        Spacer()
+                                    }
+                                    Text(talkmodel.name).font(.title2).fontWeight(.bold)
+                                    if talkmodel.name == "You"{
+                                        Spacer()
+                                    }
+                                }
+                                HStack{
+                                    if talkmodel.name != "You"{
+                                        Spacer()
+                                    }
+                                    Text(talkmodel.message).font(.title3).fontWeight(.bold)
+                                    if talkmodel.name == "You"{
+                                        Spacer()
+                                    }
+                                }
+                            }.padding()
+                        }.frame(width: 400, height: 60).background(talkmodel.name == "You" ? Color.green : Color.red).foregroundColor(Color.white).cornerRadius(6).padding()
+                        if talkmodel.name == "You"{
+                            Spacer()
+                        }
+                    }
+                }
             }
             Spacer()
             ZStack{
@@ -27,12 +67,25 @@ struct TalkView: View {
                 HStack{
                     Spacer()
                     Button(action: {
-                        
+                        TalkHistory.append(TalkModel(name: "You", message: SendMessage))
+                        SendMessage = ""
                     }){
-                        Image(systemName: "arrowshape.up.fill").frame(width: 70, height: 70).background(Color.blue).foregroundColor(Color.white).cornerRadius(50)
+                        if !SendMessage.isEmpty{
+                            Image(systemName: "arrowshape.up.fill").frame(width: 70, height: 70).background(Color.blue).foregroundColor(Color.white).cornerRadius(50)
+                        }
                     }.padding()
                 }
             }
+        }
+        .toolbar {
+            ToolbarItem(placement: .keyboard) {
+                Button("閉じる") {
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                }
+            }
+        }
+        .onAppear{
+            
         }
     }
 }
