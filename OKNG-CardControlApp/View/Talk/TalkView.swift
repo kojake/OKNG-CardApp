@@ -9,7 +9,7 @@ import SwiftUI
 import FirebaseFirestore
 
 struct TalkView: View {
-    @State var SelectedTalk: String = "a"
+    @Binding var SelectedTalk: String
     @State var SendMessage: String = ""
     
     @State private var TalkHistory: [TalkModel] = [
@@ -103,8 +103,4 @@ struct TalkView: View {
             
         }
     }
-}
-
-#Preview {
-    TalkView()
 }
