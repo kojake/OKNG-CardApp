@@ -41,7 +41,7 @@ struct SelectTalkView: View {
             TalkUserListGet()
         }
     }
-    func TalkUserListGet(){
+    private func TalkUserListGet(){
         let db = Firestore.firestore()
         
         db.collection("TalkUserList").getDocuments { (querySnapshot, error) in

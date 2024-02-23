@@ -52,6 +52,7 @@
 		9747A5202B82D4F300A7EBEA /* TalkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747A51F2B82D4F300A7EBEA /* TalkModel.swift */; };
 		9747A5222B85EC3B00A7EBEA /* TapMessageEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747A5212B85EC3B00A7EBEA /* TapMessageEditView.swift */; };
 		9747A5242B861D6D00A7EBEA /* Progressview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747A5232B861D6D00A7EBEA /* Progressview.swift */; };
+		97532FBB2B88C26E00BA04F9 /* FirstTalkUserSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97532FBA2B88C26E00BA04F9 /* FirstTalkUserSelectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		9747A51F2B82D4F300A7EBEA /* TalkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkModel.swift; sourceTree = "<group>"; };
 		9747A5212B85EC3B00A7EBEA /* TapMessageEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapMessageEditView.swift; sourceTree = "<group>"; };
 		9747A5232B861D6D00A7EBEA /* Progressview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progressview.swift; sourceTree = "<group>"; };
+		97532FBA2B88C26E00BA04F9 /* FirstTalkUserSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTalkUserSelectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				973C17962B735937001E0A35 /* LoginView.swift */,
 				973C17982B735B88001E0A35 /* SigninView.swift */,
 				973C179C2B74FB5D001E0A35 /* UserStatusSelectView.swift */,
+				97532FBA2B88C26E00BA04F9 /* FirstTalkUserSelectView.swift */,
 				973C17512B73097F001E0A35 /* ContentView.swift */,
 				9747A5232B861D6D00A7EBEA /* Progressview.swift */,
 				9747A5112B7EE36900A7EBEA /* Profile */,
@@ -321,6 +324,7 @@
 				973C17A82B7E49A9001E0A35 /* ProfileView.swift in Sources */,
 				973C17972B735937001E0A35 /* LoginView.swift in Sources */,
 				973C179B2B736A72001E0A35 /* SelectionTableDetailView.swift in Sources */,
+				97532FBB2B88C26E00BA04F9 /* FirstTalkUserSelectView.swift in Sources */,
 				973C17522B73097F001E0A35 /* ContentView.swift in Sources */,
 				9747A5192B821D2B00A7EBEA /* SelectTalkView.swift in Sources */,
 				9747A5202B82D4F300A7EBEA /* TalkModel.swift in Sources */,

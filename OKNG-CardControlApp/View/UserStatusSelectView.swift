@@ -10,12 +10,14 @@ import FirebaseFirestore
 
 struct UserStatusSelectView: View {
     @Binding var Gmail: String
+    @Binding var Username: String
     @State var SelectionUserStatus = ""
-    @State private var Showshould_ContentView = false
+    
+    @State private var Showshould_FirstTalkUserSelectView = false
     
     var body: some View {
         VStack{
-            NavigationLink(destination: ContentView(Gmail: $Gmail), isActive: $Showshould_ContentView){
+            NavigationLink(destination: FirstTalkUserSelectView(Gmail: $Gmail, Username: $Username), isActive: $Showshould_FirstTalkUserSelectView){
                 EmptyView()
             }
             
@@ -56,7 +58,7 @@ struct UserStatusSelectView: View {
             if let error = error {
                 print("Error updating document: \(error)")
             } else {
-                Showshould_ContentView = true
+                Showshould_FirstTalkUserSelectView = true
             }
         }
     }

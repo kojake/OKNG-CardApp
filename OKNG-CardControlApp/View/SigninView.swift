@@ -26,7 +26,7 @@ struct SigninView: View {
     
     var body: some View {
         VStack{
-            NavigationLink(destination: UserStatusSelectView(Gmail: $NewGmail), isActive: $Showshould_UserStatusSelectView){
+            NavigationLink(destination: UserStatusSelectView(Gmail: $NewGmail, Username: $NewUsername), isActive: $Showshould_UserStatusSelectView){
                 EmptyView()
             }
             Text("OKNG-Card").font(.largeTitle).fontWeight(.black).padding()
@@ -77,10 +77,8 @@ struct SigninView: View {
     private func NewAccountCreate(){
         let db = Firestore.firestore()
         
-        // 新しいコレクションを作成
         let collectionReference = db.collection("UserList")
         
-        // ドキュメントを追加
         let data: [String: Any] = [
             "Username": NewUsername,
             "Password": NewPassword,

@@ -12,11 +12,7 @@ struct TalkView: View {
     @Binding var SelectedTalk: String
     @State var SendMessage: String = ""
     
-    @State private var TalkHistory: [TalkModel] = [
-        TalkModel(name: "You", message: "a"),
-        TalkModel(name: "You", message: "b"),
-        TalkModel(name: "Your", message: "c")
-    ]
+    @State private var TalkHistory: [TalkModel] = []
     @State var TapMessage = ""
     @State var TapMessageIndex = 0
     
@@ -102,5 +98,8 @@ struct TalkView: View {
         .onAppear{
             
         }
+    }
+    private func Send(){
+        
     }
 }
